@@ -45,4 +45,27 @@
   console.log(coffeeMachine);
   const coffee = coffeeMachine.makeCoffee(2);
   console.log(coffee);
+
+  class User {
+    // fullName: string; 멤버 변수로 선언하면 한번 계산 후에 변경되지가 않는다.
+
+    get fullName(): string {
+      // 계산이 필요할 때 유용하게 사용할 수 있다. 호출은 동일하게 user.fullName
+      return `${this.firstName} ${this.lastName}`;
+    }
+
+    private internalAge = 4;
+    get age(): number {
+      return 3;
+    }
+    set age(num: number) {
+      this.internalAge = num;
+    }
+
+    constructor(private firstName: string, private lastName: string) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      // this.fullName = `${firstName} ${lastName}`;
+    }
+  }
 }
