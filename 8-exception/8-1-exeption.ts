@@ -22,6 +22,7 @@ function run() {
   } catch (error) {
     console.log(`catched!!`);
   } finally {
+    // 꼭 마무리해야하는 것은 finally에서 하는 것이 좋다! 무조건 실행 된다.
     closeFile(fileName);
     console.log(`closed!`);
   }
