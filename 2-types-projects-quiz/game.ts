@@ -7,8 +7,8 @@
 
   const position: { x: number; y: number } = { x: 0, y: 0 };
 
-  function move(command: CommandType) {
-    switch (command) {
+  function move(direction: CommandType) {
+    switch (direction) {
       case "up":
         position.y++;
         break;
@@ -22,7 +22,8 @@
         position.x++;
         break;
       default:
-        throw new Error("unknown command");
+        const invalid: never = direction;
+        throw new Error(`unknown direction: ${invalid}`);
     }
   }
 
